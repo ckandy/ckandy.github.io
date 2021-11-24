@@ -29,6 +29,8 @@
 	justify-content: center;
 	align-items: center;
 	margin-top: 25px;
+	flex-wrap: wrap;
+	padding: 5px 20px;
 
 }
 .timer .timer__block {
@@ -37,7 +39,7 @@
 	align-items: center;
 	padding: 5px 10px;
 	font-size: 1.5rem;
-	margin-right: 20px;
+	margin:5px 10px;
 	border: 2px dashed #585858;
 	border-radius: 10px;
 	width: 140px;
@@ -45,18 +47,4 @@
 .timer .timer__block span {
 	display: block;
 	margin-right: 8px;
-}
-.timer .timer__block:last-child {
-	margin: 0;
-}
-@media (max-width: 320px) {
-	.title {
-		font-size: 1rem;
-	}
-	.timer .timer__block {
-		font-size: 12px;
-		margin-right: 8px;
-		width: auto;
-		padding: 5px;
-	}
 }
