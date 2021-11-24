@@ -1,8 +1,37 @@
 "use strict";
 
 window.addEventListener('DOMContentLoaded', ()=> {
-	//date
-    const deadline = '2022-01-04';
+    let deadline;
+
+	const yes = document.getElementById('yes'),
+        no  = document.getElementById('no'),
+        dorm = document.querySelector('.dorm'),
+        container = document.querySelector('.container'),
+        deadDate = document.querySelector('.dead-date');
+    yes.addEventListener('click', (e) => {
+        if (e.target && e.target.id == 'yes')
+        {
+            deadline = '2021-12-08';
+            deadDate.innerHTML = '08.12.2021';
+
+        }
+        isChecked();
+    });
+    no.addEventListener('click', (e) => {
+        if (e.target && e.target.id == 'no')
+        {
+            deadline = '2022-01-04';
+            deadDate.innerHTML = '04.01.2022';
+        }
+        isChecked();
+    });
+    function isChecked() {
+        dorm.classList.add('animate__fadeOut');
+        dorm.style.display = 'none';
+        container.classList.add('animate__fadeIn');
+
+    //date
+
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
             days = Math.floor(t / (1000 * 3600 * 24)),
@@ -49,6 +78,5 @@ window.addEventListener('DOMContentLoaded', ()=> {
         }
     }
     setclock('.timer', deadline);
-
-
+    }
 })

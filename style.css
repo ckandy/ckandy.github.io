@@ -5,6 +5,7 @@
 	font-family: 'Manrope', sans-serif;
 	color:#fff;
 	text-align: center;
+	background-color: black;
 }
 .container {
 	width: 100vw;
@@ -13,6 +14,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: 0.3s all;
 }
 .title {
 	font-size: 2rem;
@@ -42,9 +44,60 @@
 	margin:5px 10px;
 	border: 2px dashed #585858;
 	border-radius: 10px;
-	width: 140px;
+	width: 160px;
 }
 .timer .timer__block span {
 	display: block;
 	margin-right: 8px;
+}
+.dorm {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	width: 100vw;
+	height: 100vh;
+	transition: 0.3s all;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.wrapper{
+	display: inline-flex;
+	height: 100px;
+	width: 400px;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 5px;
+	padding: 20px 15px;
+	box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+}
+.wrapper button{
+	background: #fff;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 0 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 0 10px;
+	border: 2px solid #fff;
+	transition: all 0.3s ease;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+}
+#yes {
+	background: #ff4f68;
+}
+#no {
+	background: #1b48ed;
+}
+button:hover {
+	transform: scale(1.1);
 }
