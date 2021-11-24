@@ -40,8 +40,12 @@
 	margin-right: 20px;
 	border: 2px dashed #585858;
 	border-radius: 10px;
+	width: 140px;
 }
 .timer .timer__block span {
 	display: block;
 	margin-right: 8px;
+}
+.timer .timer__block:last-child {
+	margin: 0;
 }
