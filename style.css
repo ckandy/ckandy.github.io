@@ -52,9 +52,9 @@
 }
 .dorm {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	background: #000;
 	width: 100vw;
 	height: 100vh;
