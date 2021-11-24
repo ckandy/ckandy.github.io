@@ -2,12 +2,46 @@
 
 window.addEventListener('DOMContentLoaded', ()=> {
     let deadline;
-
+    const wave11 = {
+        wave11NotDorm: {
+            lvl1: '2021-11-04',
+            lvl2: '2022-01-04',
+            lvl3: '2022-03-04',
+            lvl4: '2022-06-04',
+            lvl5: '2022-10-04',
+            lvl6: '2022-12-04',
+            lvl7: '2023-02-04',
+            lvl10: '2023-08-04',
+            lvl14: '2024-02-04',
+            lvl18: '2024-11-04',
+            lvl20: '2025-02-04',
+            lvl21: '2025-08-04',
+        },
+        wave11Dorm: {
+            lvl1: '2021-10-24',
+            lvl2: '2021-12-08',
+            lvl3: '2022-01-22',
+            lvl4: '2022-04-07',
+            lvl5: '2022-07-06',
+            lvl6: '2022-08-20',
+            lvl7: '2022-10-04',
+            lvl10: '2023-02-01',
+            lvl14: '2024-02-04',
+            lvl18: '2024-11-04',
+            lvl20: '2025-02-04',
+            lvl21: '2025-08-04',
+        }
+    }
 	const yes = document.getElementById('yes'),
         no  = document.getElementById('no'),
         dorm = document.querySelector('.dorm'),
         container = document.querySelector('.container'),
-        deadDate = document.querySelector('.dead-date');
+        deadDate = document.querySelector('.dead-date'),
+        hamburger = document.querySelector('.hamburger');
+    hamburger.addEventListener('click', ()=> {
+        console.log('ham');
+    })
+
     yes.addEventListener('click', (e) => {
         if (e.target && e.target.id == 'yes')
         {

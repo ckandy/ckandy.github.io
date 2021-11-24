@@ -7,6 +7,32 @@
 	text-align: center;
 	background-color: black;
 }
+.hamburger {
+	width: 40px;
+	height: 30px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 2;
+
+}
+.hamburger span {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.hamburger span:nth-child(2) {
+	width: 40px;
+}
+.hamburger span:last-child {
+	margin-bottom: 0;
+}
 .container {
 	width: 100vw;
 	height: 100vh;
@@ -15,6 +41,7 @@
 	justify-content: center;
 	align-items: center;
 	transition: 0.3s all;
+	z-index: 1;
 }
 .title {
 	font-size: 2rem;
@@ -100,4 +127,10 @@
 }
 button:hover {
 	transform: scale(1.1);
+}
+.lvl {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
 }
