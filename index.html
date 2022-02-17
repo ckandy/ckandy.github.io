@@ -41,11 +41,13 @@
 			<section class="wrapper">
 				<span class="curr">Currency converter</span>
 				<form action="GET">
-					<input type="text" name="rub" id="rub" placeholder="RUB" />
-					<input type="text" name="usd" id="usd" placeholder="USD" />
+					<input type="number" name="rub" id="rub" placeholder="RUB" />
+					<input type="number" name="usd" id="usd" placeholder="USD" />
 				</form>
 			</section>
 		</main>
+		<link rel="dns-prefetch" href="https://www.cbr-xml-daily.ru/" />
+		<script src="//www.cbr-xml-daily.ru/daily_jsonp.js" async></script>
 		<script src="script.js"></script>
 	</body>
 </html>
