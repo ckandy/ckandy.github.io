@@ -3,134 +3,27 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Manrope', sans-serif;
-	color:#fff;
-	text-align: center;
-	background-color: black;
-}
-.hamburger {
-	width: 40px;
-	height: 30px;
-	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	z-index: 2;
-
-}
-.hamburger span {
-	display: block;
-	width: 30px;
-	height: 4px;
-	background-color: #fff;
-	margin-bottom: 10px;
-}
-.hamburger span:nth-child(2) {
-	width: 40px;
-}
-.hamburger span:last-child {
-	margin-bottom: 0;
-}
-.container {
-	width: 100vw;
-	height: 100vh;
-	background-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: 0.3s all;
-	z-index: 1;
-}
-.title {
-	font-size: 2rem;
-	font-weight: 700;
-}
-.deadline__timer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.timer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 25px;
-	flex-wrap: wrap;
-	padding: 5px 20px;
-
-}
-.timer .timer__block {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 5px 10px;
-	font-size: 1.5rem;
-	margin:5px 10px;
-	border: 2px dashed #585858;
-	border-radius: 10px;
-	width: 160px;
-}
-.timer .timer__block span {
-	display: block;
-	margin-right: 8px;
-}
-.dorm {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	background: #000;
-	width: 100vw;
-	height: 100vh;
-	transition: 0.3s all;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2;
-}
-.wrapper{
-	display: inline-flex;
-	height: 100px;
-	width: 400px;
-	align-items: center;
-	justify-content: space-evenly;
-	border-radius: 5px;
-	padding: 20px 15px;
-	box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-}
-.wrapper button{
-	background: #fff;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	margin: 0 10px;
-	border-radius: 5px;
-	cursor: pointer;
-	padding: 0 10px;
-	border: 2px solid #fff;
-	transition: all 0.3s ease;
 	color: #fff;
-	font-size: 24px;
-	font-weight: 600;
 	text-align: center;
+	background-color: #1d1d1d;
 }
-#yes {
-	background: #ff4f68;
-}
-#no {
-	background: #1b48ed;
-}
-button:hover {
-	transform: scale(1.1);
-}
-.lvl {
+.wrapper {
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	justify-content: center;
 	align-items: center;
+}
+.curr {
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 20px;
+}
+input {
+	width: 200px;
+	height: 50px;
+	background: #000;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
 }
