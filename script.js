@@ -77,15 +77,33 @@
 	}
 }); */
 
-const inpRUB = document.querySelector('#rub');
-const inpUSD = document.querySelector('#usd');
+const inputRub = document.querySelector('#rub');
+const inputUsd = document.querySelector('#usd');
 
-function CBR_XML_Daily_Ru(rates) {
-	let USDrate = +rates.Valute.USD.Value.toFixed(4);
-	inpRUB.addEventListener('input', () => {
-		inpUSD.value = (+inpRUB.value / USDrate).toFixed(2);
-	});
-	inpUSD.addEventListener('input', () => {
-		inpRUB.value = (+inpUSD.value * USDrate).toFixed(2);
-	});
-}
+inputRub.addEventListener('input', () => {
+	const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+	var req = new XMLHttpRequest();
+
+	req.overrideMimeType('application/json');
+	req.open('GET', url, true);
+	req.onload = () => {
+		const jsonResponse = JSON.parse(req.responseText);
+		let usd = jsonResponse.Valute.USD.Value;
+		inputUsd.value = (+inputRub.value / usd).toFixed('2');
+	};
+	req.send(null);
+});
+
+inputUsd.addEventListener('input', () => {
+	const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+	var req = new XMLHttpRequest();
+
+	req.overrideMimeType('application/json');
+	req.open('GET', url, true);
+	req.onload = () => {
+		const jsonResponse = JSON.parse(req.responseText);
+		const usd = jsonResponse.Valute.USD.Value;
+		inputRub.value = (+inputUsd.value * usd).toFixed('2');
+	};
+	req.send(null);
+});
