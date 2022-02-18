@@ -82,7 +82,7 @@ const inputUsd = document.querySelector('#usd');
 
 inputRub.addEventListener('input', () => {
 	const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
-	var req = new XMLHttpRequest();
+	let req = new XMLHttpRequest();
 
 	req.overrideMimeType('application/json');
 	req.open('GET', url, true);
@@ -94,7 +94,7 @@ inputRub.addEventListener('input', () => {
 
 inputUsd.addEventListener('input', () => {
 	const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
-	var req = new XMLHttpRequest();
+	let req = new XMLHttpRequest();
 
 	req.overrideMimeType('application/json');
 	req.open('GET', url, true);
