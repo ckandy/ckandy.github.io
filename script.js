@@ -79,16 +79,18 @@
 
 const inputRub = document.querySelector('#rub');
 const inputUsd = document.querySelector('#usd');
+const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
 
 inputRub.addEventListener('input', () => {
-	const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
 	let req = new XMLHttpRequest();
 
 	req.overrideMimeType('application/json');
 	req.open('GET', url, true);
-	const jsonResponse = JSON.parse(req.responseText);
-	let usd = jsonResponse.Valute.USD.Value;
-	inputUsd.value = (+inputRub.value / usd).toFixed('2');
+	req.onload = () => {
+		const jsonResponse = JSON.parse(req.responseText);
+		let usd = jsonResponse.Valute.USD.Value;
+		inputUsd.value = (+inputRub.value / usd).toFixed('2');
+	};
 	req.send(null);
 });
 
@@ -98,9 +100,10 @@ inputUsd.addEventListener('input', () => {
 
 	req.overrideMimeType('application/json');
 	req.open('GET', url, true);
-	const jsonResponse = JSON.parse(req.responseText);
-	const usd = jsonResponse.Valute.USD.Value;
-	inputRub.value = (+inputUsd.value * usd).toFixed('2');
-
+	req.onload = () => {
+		const jsonResponse = JSON.parse(req.responseText);
+		const usd = jsonResponse.Valute.USD.Value;
+		inputRub.value = (+inputUsd.value * usd).toFixed('2');
+	};
 	req.send(null);
 });
