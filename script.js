@@ -86,11 +86,9 @@ inputRub.addEventListener('input', () => {
 
 	req.overrideMimeType('application/json');
 	req.open('GET', url, true);
-	req.onload = () => {
-		const jsonResponse = JSON.parse(req.responseText);
-		let usd = jsonResponse.Valute.USD.Value;
-		inputUsd.value = (+inputRub.value / usd).toFixed('2');
-	};
+	const jsonResponse = JSON.parse(req.responseText);
+	let usd = jsonResponse.Valute.USD.Value;
+	inputUsd.value = (+inputRub.value / usd).toFixed('2');
 	req.send(null);
 });
 
@@ -100,10 +98,9 @@ inputUsd.addEventListener('input', () => {
 
 	req.overrideMimeType('application/json');
 	req.open('GET', url, true);
-	req.onload = () => {
-		const jsonResponse = JSON.parse(req.responseText);
-		const usd = jsonResponse.Valute.USD.Value;
-		inputRub.value = (+inputUsd.value * usd).toFixed('2');
-	};
+	const jsonResponse = JSON.parse(req.responseText);
+	const usd = jsonResponse.Valute.USD.Value;
+	inputRub.value = (+inputUsd.value * usd).toFixed('2');
+
 	req.send(null);
 });
